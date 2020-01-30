@@ -1,0 +1,106 @@
+%item_default{
+    padding: 10px;
+    box-shadow: 0 0 13px 0px #e6e6e6;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+%hover{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    transition: .3s;
+    opacity: 0;
+    text-align: center;
+}
+
+.Item{
+    position: relative;
+    margin: 5px;
+
+    &__Delete{
+        @extend %hover;
+        left: 0;
+        background-color: red;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    &__Edit{
+        @extend %hover;
+        right:0;
+        background-color: green;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+    }
+
+    &:hover{
+        .Item__Delete, .Item__Edit{
+            transform: translateY(-50%);
+            transition-delay: 1s;
+            opacity: 1;
+        }
+        .Item__Delete{
+            transition-delay: 1.1s;
+        }
+
+        .Item__Wrapper{
+            box-shadow: 0 0 13px 0px #8a8a8a;
+        }
+
+        .Icon__card{
+            opacity: 1;
+        }
+    }
+
+    .Icon{
+        margin-top: 10px;
+        color: #ffffff;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover{
+            color: #cecece;
+        }
+
+        &__card{
+            font-size: 30px;
+            color: #c1c1c1;
+            margin-left: auto;
+            opacity: 0;
+            transition: .3s;
+        }
+    }
+}
+
+
+.Item__Wrapper{
+    @extend %item_default;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 400px;
+    transition: box-shadow ease-in-out .3s;
+    .FullName{
+        font-weight: bold;
+        margin: 0;
+    }
+    .Mail{
+        color:#858585;
+        margin: 0;
+    }
+
+
+    &__open{
+        @extend %item_default;
+        position: absolute;
+        width: 800px;
+        height: 400px;
+        transition: all .3s;
+        z-index: 99;
+        box-shadow: 0 0 100vh 50vw rgba(0, 0, 0, 0.5);
+    }
+}

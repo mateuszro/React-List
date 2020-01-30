@@ -1,0 +1,20 @@
+.btn{
+    width: 75px;
+    height: 35px;
+    border: 1px solid #adadad;
+    border-radius: 20px;
+    margin-left: 20px;
+    background-color: #000000;
+    color: #ffffff;
+
+    cursor:pointer;
+
+    &:focus,
+    &:active{
+        outline: none;
+    }
+
+    &:hover{
+        background-color: #414141;
+    }
+}
